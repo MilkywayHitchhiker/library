@@ -347,15 +347,15 @@ namespace hiker
 #define SYSLOG_ON
 #ifdef SYSLOG_ON 
 hiker::CSystemLog *Log = hiker::CSystemLog::GetInstance (LOG_DEBUG);
-#define SYSLOG_DIRECTORY(dir)	Log->SetLogDirectory (dir);
-#define SYSLOG_LEVEL(level,console)	Log->SetLogLevel(level,console);
-#define SYSLOG_LOG(type,level,fmt,...) Log->Log(type,level,fmt,__VA_ARGS__);
-#define SYSLOG_LOGHEX(type,level,strLog,pByte,ByteLength)	Log->LogHex(type,level,strLog,pByte,ByteLength);
-#define SYSLOG_LOGSession(type, level, strLog, pSessionKey)	Log->LogSessionKey (type, level, strLog, pSessionKey);
+#define LOG_DIRECTORY(dir)	Log->SetLogDirectory (dir);
+#define LOG_LEVEL(level,console)	Log->SetLogLevel(level,console);
+#define LOG_LOG(type,level,fmt,...) Log->Log(type,level,fmt,__VA_ARGS__);
+#define LOG_LOGHEX(type,level,strLog,pByte,ByteLength)	Log->LogHex(type,level,strLog,pByte,ByteLength);
+#define LOG_LOGSession(type, level, strLog, pSessionKey)	Log->LogSessionKey (type, level, strLog, pSessionKey);
 #else
-#define SYSLOG_DIRECTORY(dir)
-#define SYSLOG_LEVEL(level,console)
-#define SYSLOG_LOG(type,level,fmt,...)
-#define SYSLOG_LOGHEX(type,level,strLog,pByte,ByteLength)
-#define SYSLOG_LOGSession(type, level, strLog, pSessionKey)
+#define LOG_DIRECTORY(dir)
+#define LOG_LEVEL(level,console)
+#define LOG_LOG(type,level,fmt,...)
+#define LOG_LOGHEX(type,level,strLog,pByte,ByteLength)
+#define LOG_LOGSession(type, level, strLog, pSessionKey)
 #endif
