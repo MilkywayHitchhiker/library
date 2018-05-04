@@ -345,14 +345,18 @@ namespace hiker
 //간단하게 사용하기 위해 매크로로 만듬
 ====================================================================*/
 #define SYSLOG_ON
+
 #ifdef SYSLOG_ON 
+
 hiker::CSystemLog *Log = hiker::CSystemLog::GetInstance (LOG_DEBUG);
 #define LOG_DIRECTORY(dir)	Log->SetLogDirectory (dir);
 #define LOG_LEVEL(level,console)	Log->SetLogLevel(level,console);
 #define LOG_LOG(type,level,fmt,...) Log->Log(type,level,fmt,__VA_ARGS__);
 #define LOG_LOGHEX(type,level,strLog,pByte,ByteLength)	Log->LogHex(type,level,strLog,pByte,ByteLength);
 #define LOG_LOGSession(type, level, strLog, pSessionKey)	Log->LogSessionKey (type, level, strLog, pSessionKey);
+
 #else
+
 #define LOG_DIRECTORY(dir)
 #define LOG_LEVEL(level,console)
 #define LOG_LOG(type,level,fmt,...)

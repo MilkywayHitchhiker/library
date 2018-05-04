@@ -1,4 +1,5 @@
-﻿#include"Profiler.h"
+﻿#include "stdafx.h"
+#include"Profiler.h"
 #include <stdio.h>
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -228,7 +229,7 @@ void Profile_End (WCHAR *name)
 	QueryPerformanceCounter (&EndTime);
 	if ( false == Profile.End_Profile (name, EndTime.QuadPart) )
 	{
-	//	throw false;
+		//	throw false;
 	}
 	return;
 }
